@@ -56,12 +56,12 @@ M.options = {
    shiftwidth = 2,
    smartindent = true,
    tabstop = 8, -- Number of spaces that a <Tab> in the file counts for
-   timeoutlen = 400,
+   timeoutlen = 800,
    relativenumber = false,
    ruler = false,
    updatetime = 250,
    -- used for updater
-   update_url = "https://github.com/NvChad/NvChad",
+   update_url = "https://github.com/daddye/NvChad",
    update_branch = "main",
 }
 
@@ -115,7 +115,7 @@ M.mappings = {
    new_buffer = "<S-t>", -- open a new buffer
    new_tab = "<C-t>b", -- open a new vim tab
    save_file = "<C-s>", -- save file using :w
-   theme_toggler = "<leader>tt", -- for theme toggler, see in ui.theme_toggler
+   theme_toggler = "<leader>ct", -- for theme toggler, see in ui.theme_toggler
 
    -- terminal related mappings
    terminal = {
@@ -126,7 +126,7 @@ M.mappings = {
       -- it does not close it, see pick_term mapping to see hidden terminals
       esc_hide_termmode = { "JK" }, -- multiple mappings allowed
       -- show hidden terminal buffers in a telescope picker
-      pick_term = "<leader>W",
+      pick_term = "<leader>t",
       -- below three are for spawning terminals
       new_horizontal = "<leader>h",
       new_vertical = "<leader>v",
@@ -163,7 +163,7 @@ M.mappings.plugin = {
       esc_insertmode = { "jk" }, -- multiple mappings allowed
    },
    nvimtree = {
-      toggle = "<C-n>", -- file manager
+      toggle = "<leader>tt", -- file manager
    },
    neoformat = {
       format = "<leader>fm",
@@ -171,9 +171,9 @@ M.mappings.plugin = {
    telescope = {
       buffers = "<leader>fb",
       find_files = "<leader>ff",
-      git_commits = "<leader>cm",
-      git_status = "<leader>gt",
-      help_tags = "<leader>fh",
+      git_commits = "<leader>gc",
+      git_status = "<leader>gs",
+      help_tags = "<leader>ht",
       live_grep = "<leader>fw",
       oldfiles = "<leader>fo",
       themes = "<leader>th",
@@ -189,9 +189,9 @@ M.mappings.plugin = {
    vim_fugitive = {
       diff_get_2 = "<leader>gh",
       diff_get_3 = "<leader>gl",
-      git = "<leader>gs",
+      git = "<leader>g",
       git_blame = "<leader>gb",
-   },
+   }
 }
 
 -- user custom mappings

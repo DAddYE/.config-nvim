@@ -43,11 +43,16 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- lspInstall + lspconfig stuff
+
+lspconfig['rnix'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
 local function setup_servers()
    lspinstall.setup()
    local servers = lspinstall.installed_servers()
+
 
    for _, lang in pairs(servers) do
       if lang ~= "lua" then
