@@ -1,5 +1,6 @@
 -- uncomment this if you want to open nvim with a dir
 -- vim.cmd [[ autocmd BufEnter * if &buftype != "terminal" | lcd %:p:h | endif ]]
+vim.cmd [[ au VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'cd '.argv()[0] | endif ]]
 
 -- Use relative & absolute line numbers in 'n' & 'i' modes respectively
 -- vim.cmd[[ au InsertEnter * set norelativenumber ]]
@@ -12,6 +13,7 @@ vim.cmd [[ au TermOpen term://* setlocal nonumber norelativenumber | setfiletype
 vim.cmd [[ autocmd BufEnter,BufWinEnter,FileType,WinEnter * lua require("core.utils").hide_statusline() ]]
 
 -- Open a file from its last left off position
--- vim.cmd [[ au BufReadPost * if expand('%:p') !~# '\m/\.git/' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif ]]
+vim.cmd [[ au BufReadPost * if expand('%:p') !~# '\m/\.git/' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif ]]
+
 -- File extension specific tabbing
 -- vim.cmd [[ autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 ]]
